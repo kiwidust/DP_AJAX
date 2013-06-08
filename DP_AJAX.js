@@ -12,17 +12,17 @@ DP_AJAX regulates and manages multiple HTTP requests and XML responses.
 
 	- Built-in Debugging requires DP_Debug (available from depressedpress.com).
 
-Copyright (c) 1996-2012, The Depressed Press of Boston (depressedpress.com)
+Copyright (c) 1996-2013, The Depressed Press of Boston (depressedpress.com)
 
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
-+) Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. 
++) Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 
-+) Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. 
++) Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
-+) Neither the name of the THE DEPRESSED PRESS (DEPRESSEDPRESS.COM) nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission. 
++) Neither the name of the THE DEPRESSED PRESS (DEPRESSEDPRESS.COM) nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
@@ -68,7 +68,7 @@ DP_AJAX.createPool = function( CallerCount, Interval, DefaultTimeout, DefaultMax
 		// The Pool Constructor
 		//
 	function Pool( CallerCount, Interval, DefaultTimeout, DefaultMaxAttempts ) {
-	
+
 			// Set arguments
 		this.Interval = Interval;
 		this.DefaultTimeout = DefaultTimeout;
@@ -82,7 +82,7 @@ DP_AJAX.createPool = function( CallerCount, Interval, DefaultTimeout, DefaultMax
 
 			// Create the Caller Objects
 		var CurInstance;
-		for (var Cnt = 0; Cnt < CallerCount; Cnt++) { 
+		for (var Cnt = 0; Cnt < CallerCount; Cnt++) {
 			CurInstance = new Caller();
 			CurInstance.ID = this.ID + "_Caller" + Cnt;
 			if ( CurInstance ) {
@@ -167,7 +167,7 @@ DP_AJAX.createPool = function( CallerCount, Interval, DefaultTimeout, DefaultMax
 
 		// DP_RequestPool.start() Method
 		//
-	Pool.prototype.start = function() { 
+	Pool.prototype.start = function() {
 
 			// Set a proxy function to maintain scoping when called in the context of Window
 		var CurPool = this;
@@ -185,7 +185,7 @@ DP_AJAX.createPool = function( CallerCount, Interval, DefaultTimeout, DefaultMax
 
 		// DP_RequestPool.stop() Method
 		//
-	Pool.prototype.stop = function() { 
+	Pool.prototype.stop = function() {
 
 			// Clear the Interval
 		window.clearInterval(this.IntervalID);
@@ -201,7 +201,7 @@ DP_AJAX.createPool = function( CallerCount, Interval, DefaultTimeout, DefaultMax
 
 		// DP_RequestPool.queueLength() Method
 		//
-	Pool.prototype.queueLength = function() { 
+	Pool.prototype.queueLength = function() {
 
 			// Return the number of calls
 		return this.Calls.length;
@@ -211,10 +211,10 @@ DP_AJAX.createPool = function( CallerCount, Interval, DefaultTimeout, DefaultMax
 
 		// DP_RequestPool.isBusy() Method
 		//
-	Pool.prototype.isBusy = function() { 
+	Pool.prototype.isBusy = function() {
 
 			// Loop over the Callers
-		for ( var Cnt = 0; Cnt < this.Callers.length; Cnt++ ) { 
+		for ( var Cnt = 0; Cnt < this.Callers.length; Cnt++ ) {
 			if ( this.Callers[Cnt].Ob.readyState != 0 && this.Callers[Cnt].Ob.readyState != 4 ) {
 					// An Object is "busy"
 				return true;
@@ -286,8 +286,8 @@ DP_AJAX.createPool = function( CallerCount, Interval, DefaultTimeout, DefaultMax
 				// Get the Current Call
 			var CurCall = Request.Calls[Cnt];
 				// If needed update the request with defaults
-			if ( !CurCall.Timeout ) {  CurCall.Timeout = this.DefaultTimeout  }; 
-			if ( !CurCall.MaxAttempts ) {  CurCall.MaxAttempts = this.DefaultMaxAttempts  }; 
+			if ( !CurCall.Timeout ) {  CurCall.Timeout = this.DefaultTimeout  };
+			if ( !CurCall.MaxAttempts ) {  CurCall.MaxAttempts = this.DefaultMaxAttempts  };
 
 				// Only put non null calls into the queue
 			if ( CurCall.URL != null ) {
@@ -315,7 +315,7 @@ DP_AJAX.createPool = function( CallerCount, Interval, DefaultTimeout, DefaultMax
 
 		// DP_RequestPool.manageCalls
 		//
-	Pool.prototype.manageCalls = function() { 
+	Pool.prototype.manageCalls = function() {
 
 			// Set some Shortcuts
 		var Callers = this.Callers;
@@ -393,7 +393,7 @@ DP_AJAX.createPool = function( CallerCount, Interval, DefaultTimeout, DefaultMax
 
 
 		// DP_RequestPool.readyStateHandler
-		// 
+		//
 	Pool.prototype.readyStateHandler = function(Caller) {
 
 			// If the ReadyState is 0, return immediately
@@ -654,7 +654,7 @@ DP_AJAX.createRequest = function( SuccessHandler, SuccessHandlerArgs, ErrorHandl
 
 			// Set a Unique ID for the Request
 		this.ID = "DP_AJAX_Request_" + DP_AJAX._getRequestID();
-		
+
 			// Set up Calls Array
 		this.Calls = [];
 
@@ -669,7 +669,7 @@ DP_AJAX.createRequest = function( SuccessHandler, SuccessHandlerArgs, ErrorHandl
 
 		// Request.addCall() Method
 		//
-	Request.prototype.addCall = function( Method, URL, Parameters, Headers, Timeout, MaxAttempts ) { 
+	Request.prototype.addCall = function( Method, URL, Parameters, Headers, Timeout, MaxAttempts ) {
 
 			// Manage arguments.
 			//
@@ -687,12 +687,12 @@ DP_AJAX.createRequest = function( SuccessHandler, SuccessHandlerArgs, ErrorHandl
 		} else if ( Method.toLowerCase() == "soap" ) {
 			Method = "POST";
 			Headers["Content-Type"] = "text/xml; charset=utf-8";
-		} else if ( Method.toLowerCase() == "soap12" ) { 
-			Method = "POST"; 
+		} else if ( Method.toLowerCase() == "soap12" ) {
+			Method = "POST";
 			Headers["Content-Type"] = "application/soap+xml";
-		} else { 
-			Method = "GET"; 
-		}; 
+		} else {
+			Method = "GET";
+		};
 			// URL (Deafults to empty, will output a null result to the response.)
 		if ( typeof URL != "string" ) {  URL = ""  };
 			// ParameterList
@@ -762,7 +762,7 @@ DP_AJAX.createRequest = function( SuccessHandler, SuccessHandlerArgs, ErrorHandl
 				"ResponseHeaders" : null,
 				"ContentType" : null
 				};
-		
+
 		};
 
 			// Return
@@ -773,7 +773,7 @@ DP_AJAX.createRequest = function( SuccessHandler, SuccessHandlerArgs, ErrorHandl
 
 		// Request.abort() Method
 		//
-	Request.prototype.abort = function() { 
+	Request.prototype.abort = function() {
 
 			// If the request has been aborted previously (or has not been added to a request pool), we're done
 		if ( this.status == "Aborted" || this.RequestPool == null ) {
@@ -897,12 +897,12 @@ DP_AJAX.loadXML = function( URL, Async, Handler ) {
 			CurDoc.onreadystatechange = function() { if ( CurDoc.readyState == 4 ) { Handler(CurDoc) }; };
 		};
 
-	
+
 	} else {
 
 			// Load synchronously
 		CurDoc.async = false;
-	
+
 	};
 
 		// Load from the passed URL
