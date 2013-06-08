@@ -1,18 +1,21 @@
-/*  DepressedPress.com DP_AJAX
+/*  DepressedPress.com, DP_AJAX
 
-Author: Jim Davis, the Depressed Press of Boston
-Date: July 18, 2012
+Author: Jim Davis, the Depressed Press
+Created: July 18, 2012
 Contact: webmaster@depressedpress.com
 Website: www.depressedpress.com
 
 Full documentation can be found at:
-http://www.depressedpress.com/
+http://depressedpress.com/javascript-extensions/
 
 DP_AJAX regulates and manages multiple HTTP requests and XML responses.
 
 	- Built-in Debugging requires DP_Debug (available from depressedpress.com).
 
-Copyright (c) 1996-2013, The Depressed Press of Boston (depressedpress.com)
+
++ + + + + + + + LEGAL NOTICE + + + + + + + +
+
+Copyright (c) 1996-2014, The Depressed Press (depressedpress.com)
 
 All rights reserved.
 

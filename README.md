@@ -8,7 +8,6 @@
 </ul>
 
 <p>The DP_AJAX library provides simple methods to manage multiple HTTP requests and XML responses.</p>
-
 <ul>	<li>The library has a very small footprint (only two global objects are created).</li>
 	<li>Multiple (but still asynchronous) HTTP calls can be joined together and fire a single handler when complete.</li>
 	<li>Multiple request pools can be instantiated in the same application if required (for example a "fast" pool might be created for user interface interaction while a "slow" pool might be created for automated logging).</li>
@@ -17,7 +16,6 @@
 	<li>Highly configurable.  The number of request objects in the pool, the interval at which the request queue is checked, the timeout and the number of retry attempts for requests are user-configurable on a per-instance basis.</li>
 	<li>Optional Debugging and logging via <a href="http://depressedpress.com/javascript-extensions/dp_debug/">DP_Debug</a> (if available).</li>
 </ul>
-
 <p>This component requires a JavaScript (ECMAScript) 1.3 (or better) run-time environment and has been tested successfully on Internet Explorer 8+, Firefox 13+ and Google Chrome but should function on any modern browser.</p>
 
 <blockquote style="background: #dedede;">
